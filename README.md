@@ -28,7 +28,7 @@ Where <!-- $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$ --> <img style="transform
 
 We can then calculate the angle between <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ieGNcDC98n.svg"> and <!-- $\overrightarrow{AB}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bZOklRSeXt.svg"> as <!-- $\theta = \theta_0 + \theta_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mYwCcF00qN.svg">
 
-This angle allows us to derive the global position of <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ifumTSKfgH.svg"> by converting from polar to cartesian coordinates and adding <!-- $A$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JqlCG8than.svg"> the new point to A:
+This angle allows us to derive the global position of <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ifumTSKfgH.svg"> by converting from polar to cartesian coordinates and adding the new point to <!-- $A$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JqlCG8than.svg">:
 <!-- $$ 
 B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)} 
 $$ --> 
