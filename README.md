@@ -22,6 +22,7 @@ Where <!-- $l_1$ --> <img style="transform: translateY(0.1em); background: white
 $$ --> 
 
 <div align="center"><img style="background: white;" src="svg\E2gswxJD6m.svg"></div>
+
 Where <!-- $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\jy0x4HzbBF.svg"> .
 
 We can then calculate the angle between <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ieGNcDC98n.svg"> and <!-- $\overrightarrow{AB}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bZOklRSeXt.svg"> as <!-- $\theta = \theta_0 + \theta_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mYwCcF00qN.svg">
@@ -32,6 +33,7 @@ B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)}
 $$ --> 
 
 <div align="center"><img style="background: white;" src="svg\7ptjwm1F99.svg"></div>
+
 Once we have calculated <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\OEi4kukbVI.svg"> , we can finally position our limbs in a way such that they reach the target without overlapping.
 
 ![image info](images/2D-IK.png)
