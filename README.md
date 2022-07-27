@@ -18,7 +18,7 @@ Where $l_1$ is the length of the first bone, $l_2$ is the length of second bone,
 
 $$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{x} \over |\overrightarrow{AC}|\left|\vec{x}\right|\right) c }$$
 
-Where $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$.
+Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
 
 We can then calculate the angle between $\overrightarrow{AC}$ and $\overrightarrow{AB}$ as $\theta = \theta_0 + \theta_1$.
 
