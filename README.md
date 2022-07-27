@@ -8,7 +8,7 @@ The demonstration is done using a spider-like character made through Unity, alth
 
 ### 2D
 
-Let point $A$ be the `body` of the limb, point $B$ be the joint between our two limbs, point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from <!-- $A$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\DnAW9dbK6y.svg"> to <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\uPwik1WLIm.svg"> and the second bone is going from <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\u7S9dT4RD9.svg"> to <!-- $C$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\UUGwv5SFR8.svg">.
+Let point $A$ be the `body` of the limb, point $B$ be the joint between our two limbs, point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from $A$ to $B$ and the second bone is going from $B$ to $C$.
 
 Each IK is solved using this formula derived from the law of cosines:
 $$
