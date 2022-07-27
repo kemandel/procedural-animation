@@ -8,8 +8,6 @@ The demonstration is done using a spider-like character made through Unity, alth
 
 ### 2D
 
-$\theta_0$
-
 Let point $A$ be the `body` of the limb, point $B$ be the joint between our two limbs, point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from $A$ to $B$ and the second bone is going from $B$ to $C$.
 
 Each IK is solved using this formula derived from the law of cosines:
@@ -19,7 +17,7 @@ $$  -->
 
 <div align="center"><img style="background: white;" src="svg\zlWwaB4i6u.svg"></div>
 
-Where <!-- $l_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\LThvZL0SNl.svg"> is the length of the first bone, <!-- $l_2$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\okrg28Ou1q.svg"> is the length of second bone, and <!-- $d$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\zNbhCWMPAY.svg"> is the distance from the object to the target. This formula gives us <!-- $\theta_0$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\6YKqVBVbmx.svg">, which represents the angle from the vector parallel to the x-axis <!-- $\left<d,0\right>$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\UBt1XT9pQD.svg"> and <!-- $\overrightarrow{AB}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\cbxgC7mzU3.svg">\. Next we need to find the angle between the vectors <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\325INYv7sL.svg"> and <!-- $\left<d,0\right>$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JaE7H8yFHX.svg">. We can calculate this as 
+Where <!-- $l_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\LThvZL0SNl.svg"> is the length of the first bone, <!-- $l_2$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\okrg28Ou1q.svg"> is the length of second bone, and <!-- $d$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\zNbhCWMPAY.svg"> is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from the vector parallel to the x-axis <!-- $\left<d,0\right>$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\UBt1XT9pQD.svg"> and $\overrightarrow{AB}$. Next we need to find the angle between the vectors <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\325INYv7sL.svg"> and <!-- $\left<d,0\right>$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JaE7H8yFHX.svg">. We can calculate this as 
 <!-- $$
 \theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \left<d,0\right> \over |\overrightarrow{AC}|\left|\left<d,0\right>\right|\right) c }
 $$ --> 
