@@ -11,9 +11,9 @@ The demonstration is done using a spider-like character made through Unity, alth
 Let point $A$ be the `body` of the limb, point $B$ be the joint between our two limbs, point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from $A$ to $B$ and the second bone is going from $B$ to $C$.
 
 Each IK is solved using this formula derived from the law of cosines:
-$$
+<!-- $$
 \theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }
-$$ 
+$$  -->
 
 <div align="center"><img style="background: white;" src="svg\zlWwaB4i6u.svg"></div>
 
