@@ -12,22 +12,18 @@ Let point $A$ be the `body` of the limb, point $B$ be the joint between our two 
 
 Each IK is solved using this formula derived from the law of cosines:
 
-$\theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$
+$$\theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
 
 Where $l_1$ is the length of the first bone, $l_2$ is the length of second bone, and $d$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{x}$ to $\overrightarrow{AB}$ where $\vec{x}$ is the vector with magnitute $d$ going along the x-axis from $A$. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{x}$. We can calculate this as 
 
-$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{x} \over |\overrightarrow{AC}|\left|\vec{x}\right|\right) c }$
+$$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{x} \over |\overrightarrow{AC}|\left|\vec{x}\right|\right) c }$$
 
-Where <!-- $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\jy0x4HzbBF.svg"> .
+Where $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$.
 
-We can then calculate the angle between <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ieGNcDC98n.svg"> and <!-- $\overrightarrow{AB}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bZOklRSeXt.svg"> as <!-- $\theta = \theta_0 + \theta_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mYwCcF00qN.svg">
+We can then calculate the angle between $\overrightarrow{AC}$ and $\overrightarrow{AB}$ as $\theta = \theta_0 + \theta_1$.
 
 This angle allows us to derive the global position of $B$ by converting from polar to cartesian coordinates and adding the new point to $A$:
-<!-- $$ 
-B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)} 
-$$ --> 
-
-<div align="center"><img style="background: white;" src="svg\7ptjwm1F99.svg"></div>
+$$B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)}$$
 
 Once we have calculated $B$, we can finally position our limbs in a way such that they reach the target while connected without overlapping.
 
