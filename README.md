@@ -14,7 +14,7 @@ Each IK is solved using this formula derived from the law of cosines:
 
 $$\theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
 
-Where $l_1$ is the length of the first bone, $l_2$ is the length of second bone, and $d$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{x}$ to $\overrightarrow{AB}$ where $\vec{x}$ is the vector with magnitute $d$ going along the positive x-axis from $A$. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{x}$. We can calculate this as 
+Where $l_1$ is the length of the first bone, $l_2$ is the length of second bone, and $d$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{x}$ to $\overrightarrow{AB}$ where $\vec{x}$ is the vector with magnitute $d$ going along the positive x-axis. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{x}$. We can calculate this as 
 
 $$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{x} \over |\overrightarrow{AC}|\left|\vec{x}\right|\right) c }$$
 
