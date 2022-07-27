@@ -28,13 +28,13 @@ Where <!-- $c = {\{ A_y < C_y : 1, A_y > C_y : -1 \}}$ --> <img style="transform
 
 We can then calculate the angle between <!-- $\overrightarrow{AC}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ieGNcDC98n.svg"> and <!-- $\overrightarrow{AB}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bZOklRSeXt.svg"> as <!-- $\theta = \theta_0 + \theta_1$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mYwCcF00qN.svg">
 
-This angle allows us to derive the global position of <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\ifumTSKfgH.svg"> by converting from polar to cartesian coordinates and adding the new point to <!-- $A$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\JqlCG8than.svg">:
+This angle allows us to derive the global position of $B$ by converting from polar to cartesian coordinates and adding the new point to $A$:
 <!-- $$ 
 B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)} 
 $$ --> 
 
 <div align="center"><img style="background: white;" src="svg\7ptjwm1F99.svg"></div>
 
-Once we have calculated <!-- $B$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\OEi4kukbVI.svg"> , we can finally position our limbs in a way such that they reach the target while connected without overlapping.
+Once we have calculated $B$, we can finally position our limbs in a way such that they reach the target while connected without overlapping.
 
 ![image info](images/2D-IK.png)
