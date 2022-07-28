@@ -25,7 +25,7 @@ Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
 We can then calculate the angle between $\vec{v}$ and $\overrightarrow{AB}$ as $\theta = \theta_0 + \theta_1$.
 
 This angle allows us to derive the global position of $B$ by converting from polar to cartesian coordinates and adding the new point to $A$:
-$$B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)}$$
+$$B = A + {\left(l_1\cos(\theta),  l_1\sin(\theta)\right)}$$
 
 Once we have calculated $B$, we can finally position our limbs in a way such that they reach the target while connected without overlapping.
 
@@ -37,12 +37,24 @@ Once we have calculated $B$, we can finally position our limbs in a way such tha
 
 Moving into three dimensions may seem difficult, but it is very much the same problem. For this example, we will assume that the y-axis is in the "up" direction, as it is in Unity.
 
-The trick to solving inverse kinematics in 3D is two simply act as if you were solving one in 2D on the xy-plane and then rotate the limb to face the target. To do this we will need to find two angles; the angle from the y-axis to the vector $\overrightarrow{AB}$ on the xy-plane and the angle from the z-axis to the vector $\overrightarrow{AC}$ on the xz-plane. These angles will be used to find the position of $B$, as we did in 2D.
+The trick to solving inverse kinematics in 3D is to rotate the limb to face the target and then once again solve the IK on a 2D plane. To do this we will need to find two angles; the angle from the y-axis to the vector $\overrightarrow{AB}$ on the xy-plane and the angle from the z-axis to the vector $\overrightarrow{AC}$ on the xz-plane. These angles will be used to find the position of $B$, as we did in 2D.
 
 To find our first angle, $\phi$, we need to subtract the formula derived from the law of cosines from $90\degree$, or $\pi\over2$.
 
 $$\phi = { {\pi\over2} - \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
 
-To confine $\overrightarrow{AC}$ to the xz-plane, we will instead use a new vector $\vec{v} = \overrightarrow{AC}.x\cdot\hat{i} + 0\cdot\hat{j} + \overrightarrow{AC}.z\cdot\hat{k}$. We can then find a new angle $\theta$ using the
+To confine $\overrightarrow{AC}$ to the xz-plane, we will instead use a new vector $\vec{v} = \overrightarrow{AC}.x\cdot\hat{i} + 0\cdot\hat{j} + \overrightarrow{AC}.z\cdot\hat{k}$. We can then find a new angle $\theta$ between the vectors $\vec{v}$ and $\vec{u} = 1\cdot\hat{i} + 0\cdot\hat{j} + 0\cdot\hat{k}$ using the formula
 
-$$\theta = { \arccos\left(\overrightarrow{AC} \cdot \vec{v} \over |\overrightarrow{AC}|\left|\vec{v}\right|\right) c }$$
+$$\theta = { \arccos\left(\vec{u} \cdot \vec{v} \over |\vec{u}|\left|\vec{v}\right|\right) c }$$
+
+Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
+
+Once we have angles $\phi$ and $\theta$, we can then calculate the position of point $B$ relative to $A$ using a conversion from spherical to cartesian coordinates.
+
+$$B_{relative} = \left(l_1\sin(\phi)\cos(\theta), l_1\cos(\phi), l_1\sin(\phi)\sin(\theta)\right)$$
+
+Then we just need to add $A$ to get the position of $B$.
+
+$$B = A + B_{relative}$$
+
+Once we have our limbs we can then position them in such a way that they reach the target while connected and without overlapping.
