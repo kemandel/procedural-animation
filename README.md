@@ -14,9 +14,9 @@ Each IK is solved using this formula derived from the law of cosines:
 
 $$\theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
 
-Where $l_1 =|\overrightarrow{AB}|$ is the length of the first bone, $l_2 = |\overrightarrow{BC}|$ is the length of second bone, and $d = |\overrightarrow{AC}|$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{x}$ to $\overrightarrow{AB}$ where $\vec{x} = d\hat{i} + 0\hat{j}$. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{x}$. We can calculate this as 
+Where $l_1 =|\overrightarrow{AB}|$ is the length of the first bone, $l_2 = |\overrightarrow{BC}|$ is the length of second bone, and $d = |\overrightarrow{AC}|$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{v}$ to $\overrightarrow{AB}$ where $\vec{v} = d\hat{i} + 0\hat{j}$. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{v}$. We can calculate this as 
 
-$$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{x} \over |\overrightarrow{AC}|\left|\vec{x}\right|\right) c }$$
+$$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{v} \over |\overrightarrow{AC}|\left|\vec{v}\right|\right) c }$$
 
 Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
 
@@ -27,4 +27,8 @@ $$B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)}$$
 
 Once we have calculated $B$, we can finally position our limbs in a way such that they reach the target while connected without overlapping.
 
-![image info](images/2D-IK.png)
+[![Desmos 2D IK](images/2D-IK.png)](https://www.desmos.com/calculator/tlxbysipdl)
+
+### 3D
+
+Moving into three dimensions 
