@@ -8,19 +8,21 @@ The demonstration is done using a spider-like character made through Unity, alth
 
 ### 2D
 
-Let point $A$ be the body of the limb, point $B$ be the joint between our two limbs, point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from $A$ to $B$ and the second bone is going from $B$ to $C$.
+To solve an inverse kinematic of one joint, we need to find the position of the elbow. For this, we need the angle between the forward vector and the elbow joint as well as the distance to the joint. Since we know the distance to the elbow is just the length of the first bone, we only need to find the angle.
+
+Let point $A$ be the start of the limb, point $B$ be the joint between our two bones, and point $C$ be the target our limb is trying to reach. Then we simply need to find $B$ and position each of the bones in the limb such that the first bone is going from $A$ to $B$ and the second bone is going from $B$ to $C$.
 
 Each IK is solved using this formula derived from the law of cosines:
 
 $$\theta_0 = { \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
 
-Where $l_1 =|\overrightarrow{AB}|$ is the length of the first bone, $l_2 = |\overrightarrow{BC}|$ is the length of second bone, and $d = |\overrightarrow{AC}|$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\vec{v}$ to $\overrightarrow{AB}$ where $\vec{v} = d\hat{i} + 0\hat{j}$. Next we need to find the angle between the vectors $\overrightarrow{AC}$ and $\vec{v}$. We can calculate this as 
+Where $l_1 =|\overrightarrow{AB}|$ is the length of the first bone, $l_2 = |\overrightarrow{BC}|$ is the length of second bone, and $d = |\overrightarrow{AC}|$ is the distance from the object to the target. This formula gives us $\theta_0$, which represents the angle from $\overrightarrow{AC}$ to $\overrightarrow{AB}$. Next we need to find the angle between the vectors $\vec{v} = d\cdot\hat{i} + 0\cdot\hat{j}$ and $\overrightarrow{AC}$. We can calculate this as 
 
 $$\theta_1 = { \arccos\left(\overrightarrow{AC} \cdot \vec{v} \over |\overrightarrow{AC}|\left|\vec{v}\right|\right) c }$$
 
 Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
 
-We can then calculate the angle between $\overrightarrow{AC}$ and $\overrightarrow{AB}$ as $\theta = \theta_0 + \theta_1$.
+We can then calculate the angle between $\vec{v}$ and $\overrightarrow{AB}$ as $\theta = \theta_0 + \theta_1$.
 
 This angle allows us to derive the global position of $B$ by converting from polar to cartesian coordinates and adding the new point to $A$:
 $$B = A + {\left(cos(\theta) * l_1, sin(\theta) * l_1\right)}$$
@@ -29,6 +31,18 @@ Once we have calculated $B$, we can finally position our limbs in a way such tha
 
 [![Desmos 2D IK](images/2D-IK.png)](https://www.desmos.com/calculator/tlxbysipdl)
 
+(click image to open in desmos)
+
 ### 3D
 
-Moving into three dimensions 
+Moving into three dimensions may seem difficult, but it is very much the same problem. For this example, we will assume that the y-axis is in the "up" direction, as it is in Unity.
+
+The trick to solving inverse kinematics in 3D is two simply act as if you were solving one in 2D on the xy-plane and then rotate the limb to face the target. To do this we will need to find two angles; the angle from the y-axis to the vector $\overrightarrow{AB}$ on the xy-plane and the angle from the z-axis to the vector $\overrightarrow{AC}$ on the xz-plane. These angles will be used to find the position of $B$, as we did in 2D.
+
+To find our first angle, $\phi$, we need to subtract the formula derived from the law of cosines from $90\degree$, or $\pi\over2$.
+
+$$\phi = { {\pi\over2} - \arccos\left( { l_1^2+d^2-l_2^2\over2 l_1 d } \right) }$$
+
+To confine $\overrightarrow{AC}$ to the xz-plane, we will instead use a new vector $\vec{v} = \overrightarrow{AC}.x\cdot\hat{i} + 0\cdot\hat{j} + \overrightarrow{AC}.z\cdot\hat{k}$. We can then find a new angle $\theta$ using the
+
+$$\theta = { \arccos\left(\overrightarrow{AC} \cdot \vec{v} \over |\overrightarrow{AC}|\left|\vec{v}\right|\right) c }$$
