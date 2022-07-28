@@ -57,4 +57,4 @@ Then we just need to add $A$ to get the position of $B$.
 
 $$B = A + B_{relative}$$
 
-Once we have our limbs we can then position them in such a way that they reach the target while connected and without overlapping.
+Once we have our elbow position, we can then position our bones in such a way that they reach the target while connected and without overlapping.
