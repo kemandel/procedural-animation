@@ -47,7 +47,7 @@ To confine $\overrightarrow{AC}$ to the xz-plane, we will instead use a new vect
 
 $$\theta = { \arccos\left(\vec{u} \cdot \vec{v} \over |\vec{u}|\left|\vec{v}\right|\right) c }$$
 
-Where $c = {\{ A_y\le C_y : 1, A_y>C_y : -1 \}}$.
+Where $c = {\{ A_z\le C_z : 1, A_z>C_z : -1 \}}$.
 
 Once we have angles $\phi$ and $\theta$, we can then calculate the position of point $B$ relative to $A$ using a conversion from spherical to cartesian coordinates.
 
