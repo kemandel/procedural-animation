@@ -58,3 +58,7 @@ Then we just need to add $A$ to get the position of $B$.
 $$B = A + B_{relative}$$
 
 Once we have our elbow position, we can then position our bones in such a way that they reach the target while connected and without overlapping.
+
+[![Math3D.org 3D IK](images/3D-IK.png)](https://www.math3d.org/3dhc1ynxL)
+
+(click image to open in math3D.org)
